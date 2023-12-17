@@ -1,9 +1,11 @@
 html, body {
     height: 100%;
+    background-color: #f9fadd;
+    
+
+    color: #4985da;
 
 }
-
-
 
 body {
     display: grid;
@@ -12,10 +14,33 @@ body {
 
 * {
     
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Cherry Swash', serif;
+}
+
+#navbar {
+    color: #4985da;
+    
 }
 
 .navbar-brand {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Cherry Swash', serif;
+    
+    
+    
 }
 
+.card-title {
+    text-align: center;
+}
+
+section {
+    margin: 2%;
+}
+
+.card-body {
+    background-color: #f9fadd;
+}
+
+.card-title, .card-text {
+    color: #4985da;
+}

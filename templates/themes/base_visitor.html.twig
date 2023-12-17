@@ -2,39 +2,30 @@
 <html lang="fr">
 	<head>
 		{# Encodage des caractère prévu par le web #}
-		<meta
-		charset="UTF-8">
+		<meta charset="UTF-8">
 
 		{# Minimum de responsive design à toujours mettre en place #}
-		<meta
-		name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		{# feuille de style bootstrap #}
-		<link
-		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 		{# Google font #}
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link
-		href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap" rel="stylesheet">
 
 		{# fichier css #}
 		<link
 		rel="stylesheet" href="{{asset('css/app.css')}}">
 
-
 		{# le titre affiche dans l'onglet #}
-		<title>
-			{% block title %}{% endblock %} - le blog de Jean Dupond</title>
+		<title>{% block title %}{% endblock %}Bungalow d'hôte</title>
 
 		{# La description de la pages #}
-		<meta
-		name='description' content="{% block description %}{% endblock %} ">
+		<meta name='description' content="{% block description %}{% endblock %} ">
 
-		{# Auteur #}
-		<meta name="author" content="Matthieu Faucheux">
-		<meta name="publisher" content="DWWM">
-		
+		{# Auteur #} 
+		<meta name="author" content="Matthieu Faucheux"><meta name="publisher" content="DWWM">
 
 		{# Favicon #}
 		<link rel="apple-touch-icon" sizes="180x180" href="{{asset('apple-touch-icon.png')}} ">
@@ -48,28 +39,23 @@
 	</head>
 	<body>
 
+
 		{# barre de navigation #}
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<nav class="navbar navbar-expand-lg " id="navbar">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="{{path('visitor_welcome_index')}}">JD</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<a class="navbar-brand " href="{{path('visitor_welcome_index')}}"><img src="/favicon.ico" alt="logo"></a>
+
+				<button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="{{path('visitor_welcome_index')}} ">Accueil</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href=" #">Qui suis-je ?</a>
+							<a class="nav-link active" aria-current="page" href="{{path('visitor_welcome_index')}} " id="">Eden/Emma Polynésia</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href=" {{path('visitor_blog_index')}}">Blog</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href=" {{path('visitor_contact_index')}}">Contact</a>
-						</li>
-
 					</ul>
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item">
@@ -85,13 +71,298 @@
 
 		{# le contenu spécifique à chaque page #}
 		{% block main %}{% endblock %}
+		<section>
+			<div class="row row-cols-1 row-cols-md-3 g-4">
+				<div class="col">
+					<div class="card h-100">
+						<img src="bungalow1.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Bungalow<br>Moorea</h5>
+							<p class="card-text">Admirez le paysage exceptionnel de Moorea depuis votre bungalow sur pilotis. Détendez-vous dans un espace luxueux doté d'une salle de bain en plein air.</p>																								                               
+						</div>
+						<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+							Pus de Description
+						</button>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card h-100">
+						<img src="bungalow2.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Bungalow<br>Bora-Bora</h5>
+							<p class="card-text">Vivez une expérience inoubliable à Bora Bora dans ce bungalow de luxe sur l'eau. Plongez dans des eaux cristallines depuis votre propre ponton privé.</p>
+						</div> 
+																								                                
+						<button type="button" class="btn  btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+							Pus de Description
+						</button>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card h-100">
+						<img src="bungalow3.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Bungalow<br>Mautipi</h5>
+							<p class="card-text">Admirez le paysage exceptionnel de Mautipi depuis votre bungalow sur ilotis. Détendez-vous dans un espace luxueux doté d'une salle de bain en plein air.</p>
+																								                                
+						</div>
+						<button type="button" class="btn  btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
+							Pus de Description
+						</button>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card h-100">
+						<img src="bungalow4.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Bungalow<br>Rangiroa</h5>
+							<p class="card-text">Vivez une expérience inoubliable à Rangiroa dans ce bungalow de luxe sur l'eau. Plongez dans des eaux cristallines depuis votre propre ponton privé.</p>
+																								                                    
+						</div>
+						<button type="button" class="btn  btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop4">
+							Pus de Description
+						</button>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card h-100">
+						<img src="bungalow5.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Bungalow<br>Fakarava</h5>
+							<p class="card-text">Plongez dans la beauté naturelle de Fakarava depuis ce bungalow spacieux. Détendez-vous sur votre terrasse privée ou partez à l'aventure dans l'île.</p>
+																								                                   
+						</div>
+						<button type="button" class="btn  btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop5">
+							Pus de Description
+						</button>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card h-100">
+						<img src="bungalow6.jpg" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Bungalow<br>
+								Tahiti</h5>
+							<p class="card-text">Vivez une expérience inoubliable à Tahiti dans ce bungalow de luxe sur l'eau. Plongez dans des eaux cristallines depuis votre propre ponton privé.</p>
+																								                                    
+						</div>
+						<button type="button" class="btn  btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop6">
+							Pus de Description
+						</button>
+					</div>
+				</div>
+			</div>
 
-		{# le pied de page #}
-		<footer>
-			<p class="text-center">dwwm</p>
-		</footer>
+			<!-- Modal1 -->
+			<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header ">
+							<h1 class="modal-title fs-5" id="staticBackdropLabel1"></h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body ">
+							<h2>Bungalow Moorea</h2>
+							<p>Bungalow Moorea : Chambres : 2 chambres (peut accueillir jusqu'à 4 personnes).</p>																                                               
+							<p>
+								<strong>Description :</strong>
+								Ce bungalow spacieux dispose d’une entrée, de deux chambres confortables, d'une cuisine équipée, d'une salle de bains avec vue sur l'océan. Parfait pour une petite famille ou un groupe d'amis.
+								<br><br><strong>Entrée :</strong>							
+								canapée en rotin, 2 x fauteuils en rotin, une porte donnant vue sur le lagon avec une petite échelle.																                                                
+								<br><br><strong>Chambre 1 :</strong>
+								lit double 160 x 200, armoire,coffre intégré dans l’armoire.
+								<br><br><strong>Chambre 2 :</strong>
+								lit super poser 90 x 190, armoire
+								<br><br><strong>Cuisine équipée meublée :</strong>
+								table avec quatre chaises, plan de travail, un évier, une poubelle un réfrigérateur, une hotte aspirante, des plaques de cuisson, un four à micro-ondes, une cafetière, balai avec pelle, sceau avec serpillère, aspirateur
+								<br><br><strong>Salle de bains :</strong>								                                                
+								Une douche, lavabo,	lave-linge, miroir.							                                                
+								<br><br><strong>WC :</strong>
+								1 WC.								                                                
+							</p>	
+						</div>		
+					</div>											                                                
+				</div>				
+			</div>
+			<!-- Modal2 -->
+            <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static"data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+                <div class="modal-dialog">                
+                    <div class="modal-content">           
+                       <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel2"></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"aria-label="Close"></button>
+                        </div>         
+                        <div class="modal-body">
+                            <h2>Bungalow Bora-Bora</h2>
+                                <p>Bungalow Bora Bora : Chambres : 1 chambre (peut accueillir jusqu'à 2personnes).</p>
+                                <p><strong>Description :</strong> Ce bungalow romantique est idéal pour un
+                                	couple en quête d'intimité. Il dispose d'une chambre avec un lit
+                                	King-size, d'une salle de bains luxueuse avec baignoire balnéo, ainsi
+                                	que d'une terrasse privée donnant sur le lagon cristallin.
+                                	<br><br><strong>Entrée :</strong> canapée en rotin, une porte donnant
+                                	vue sur le lagon avec une petite échelle
+                                	<br><br><strong>Chambre 1 :</strong> lit king-size 180 x 200, armoire,
+                                	coffre intégré dans l’armoire,
+                                	<br><br><strong>Cuisine équipée meublée :</strong> table avec deux
+                                	chaises, plan de travail, un évier, une poubelle, un réfrigérateur, une
+                                	hotte aspirante, des plaques de cuisson, un four à micro-ondes, une
+                                	cafetière, balai avec pelle, sceau avec serpillère, aspirateur
+                                	<br><br><strong>Salle de bains </strong> : baignoire balnéo, lavabo, lave-linge, miroir.
+                                	<br><br><strong>WC :</strong> 1 WC.
+                                </p>                            
+                        </div>            
+                    </div>                    
+                </div>                        
+			</div> 
+            <!-- Modal3 -->
+            <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel3"></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h2>Bungalow Mautipi</h2>
+                            <p>Bungalow Mautipi : Chambres : 3 chambres (peut accueillir jusqu'à 6 personnes).</p>
+                            <p><strong>Description :</strong> Ce bungalow spacieux est parfait pour les
+                                familles nombreuses ou les groupes d'amis. Il offre trois chambres
+                                confortables, une cuisine entièrement équipée, et une terrasse avec vue sur le jardin tropical.
+                                <br><br><strong>Entrée :</strong> canapée en rotin, 4 fauteuils en rotin, une porte donnant vue sur le lagon avec une petite échelle
+                                <strong>Chambre 1 :</strong> lit double 140 x 200, armoire, coffre intégré dans l’armoire,
+                                <br><br><strong>Chambre 2 :</strong> 2 lits séparés 90 x 190, armoire
+                                <br><br><strong>Chambre 3 :</strong> 2 lits séparés 90 x 190, armoire
+                                <br><br><strong>Cuisine équipée meublée :</strong> 
+								table avec six chaises, plan de travail,un évier, une poubelle un réfrigérateur, 
+								une hotte aspirante, des plaques de cuisson, un four à micro-ondes, une cafetière,
+                                 balai avec pelle, sceau avec serpillère,aspirateur.
+                                <br><br><strong>Salle de bains :</strong> Une douche, lavabo, lave-linge, miroir
+                                <br><br><strong>WC :</strong> 2 toilettes séparée
+                            </p> 
+                        </div>        
+                    </div>            
+                </div>                
+            </div>             
+            <!-- Modal4 -->                    
+            <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static"data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel4"aria-hidden="true">
+            	<div class="modal-dialog">                        
+                    <div class="modal-content">                                             
+						<div class="modal-header">	
+							<h1 class="modal-title fs-5" id="staticBackdropLabel4"></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>                           
+                        <div class="modal-body">            
+                           <h2>Bungalow Rangiroa</h2>             
+                           <p>Bungalow Rangiroa : Chambres : 2 chambres (peut accueillir jusqu'à 4 personnes).</p>
+                           <p><strong>Description :</strong> Ce bungalow spacieux dispose d’une entrée, de deux chambres confortables, d'une cuisine équipée, d'une salle de
+                            	bains avec vue sur l'océan. Parfait pour une petite famille ou un groupe d'amis.                 
+                            	<br><br><strong>Entrée :</strong> canapée en rotin, 2 x fauteuils en rotin, une porte donnant vue sur le lagon avec une petite échelle
+                            	<br><br><strong>Chambre 1 :</strong> lit double 160 x 200, armoire,coffre intégré dans l’armoire,
+                            	<br><strong>Chambre 2 :</strong> lit super poser 90 x 190, armoire                     
+                            	<br><br><strong>Cuisine équipée meublée :</strong> table avec quatre chaises, plan de travail, un évier, une poubelle un réfrigérateur, une                                     
+                            	hotte aspirante, des plaques de cuisson, un four à micro-ondes, une                    
+                            	cafetière, balai avec pelle, sceau avec serpillère, aspirateur
+                            	<br><br><strong>Salle de bains :</strong> Une douche, lavabo,lave-linge, miroir.
+                            	<br><br><strong>WC :</strong> 1 WC.                        
+                            </p>                         
+                        </div>                            
+                    </div>                                
+                </div>                                    
+            </div>                                                                 
+            <!-- Modal5 -->                                        
+            <div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static"data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel5"aria-hidden="true"> 
+            	<div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel5"></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"aria-label="Close"></button>
+                        </div>                        
+                        <div class="modal-body">
+                            <h2>Bungalow Fakarava</h2>
+                            <p>Bungalow Fakarava : Chambres : 3 chambres (peut accueillir jusqu'à 6 personnes).</p>
+                            <p><strong>Description :</strong> Ce bungalow spacieux est parfait pour
+                                les familles nombreuses ou les groupes d'amis. Il offre trois
+                                chambres confortables, une cuisine entièrement équipée, et une
+                                terrasse avec vue sur le jardin tropical.
+                                <br><br><strong>Entrée :</strong> canapée en rotin, 4 fauteuils en rotin,
+                                une porte donnant vue sur le lagon avec une petite échelle
+                                <br><br><strong>Chambre 1 :</strong> lit double 140 x 200, armoire, coffre intégré dans l’armoire,
+                                <br><br><strong>Chambre 2 :</strong> 2 lits séparés 90 x 190, armoire  
+                                <br><br><strong>Chambre 3 :</strong> 2 lits séparés 90 x 190, armoire                                      
+                                <br><br><strong>Cuisine équipée meublée :</strong> table avec sixchaises,   
+                                plan de travail, un évier, une poubelle un réfrigérateur,                                    
+                                une hotte aspirante,                   
+                                des plaques de cuisson, un four à micro-ondes,                    
+                                une cafetière, balai avec pelle, sceau avec serpillère,                  
+                                un aspirateur                  
+                                <br><br><strong>Salle de bains :</strong> Une douche, lavabo,                     
+                                lave-linge, miroir.                     
+                                <br><br><strong>WC :</strong> 2 toilettes séparée                    
+                            </p>                        
+                         </div>                            
+                    </div>                                
+                 </div>                                    
+            </div>                                    
+            <!-- Modal6 -->
+            <div class="modal fade" id="staticBackdrop6" data-bs-backdrop="static"data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel6"aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel6"></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"aria-label="Close"></button>
+                        </div>                    
+                        <div class="modal-body">
+                            <h2>Bungalow Tahiti</h2>
+                            <p>Bungalow Tahiti : Chambres : 2 chambres (peut accueillir jusqu'à 4 personnes).</p>
+                            <p><strong>Description :</strong> Ce bungalow spacieux dispose d’une entrée,
+                                de deux chambres confortables, d'une cuisine équipée, d'une salle de                    
+                                bains avec vue sur l'océan. Parfait pour une petite famille ou un  groupe  d'amis.                 
+                                <br><br><strong>Entrée :</strong> canapée en rotin, 2 x fauteuils en
+                                rotin, une porte donnant vue sur le lagon avec une petite échelle                    
+                                <br><br><strong>Chambre 1 :</strong> lit double 160 x 200, armoire,
+                                coffre intégré dans l’armoire,                   
+                                <br><strong>Chambre 2 :</strong> lit super poser 90 x 190, armoire                                           
+                                <br><br><strong>Cuisine équipée meublée :</strong> table avec quatre                
+                                chaises, plan de travail, un évier, une poubelle un réfrigérateur, une                   
+                                hotte aspirante, des plaques de cuisson, un four à micro-ondes, une                    
+                                cafetière, balai avec pelle, sceau avec serpillère, aspirateur                    
+                                <br><br><strong>Salle de bains :</strong> Une douche, lavabo, lave-linge, miroir.                   
+                                <br><br><strong>WC :</strong>1 WC.                    
+                            </p>                       
+                        </div>                            
+                    </div>                               
+                </div>                                   
+            </div>                                        
+                                                    
+                                                
+                                            
 
+                                        
+                                    
+                                		                               
+                                        
+                                   
+                                                                                   
+                                                    
+                                                                 
+                                                
+                                                
+                                            
+                                            
+                                                
+                                                
+                                                
+                                            
+
+                                       
+                                    
+                                
+								
+                                
+                                    
+                                            
+									
+		</section>
 	</body>
-	{# le script de bootstrap #}
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
